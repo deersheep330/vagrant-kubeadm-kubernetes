@@ -56,5 +56,7 @@ sudo apt-get update -y
 
 sudo apt-get install -y kubelet=$KUBERNETES_VERSION kubectl=$KUBERNETES_VERSION kubeadm=$KUBERNETES_VERSION
 
+apt-get install -y open-iscsi nfs-common
+
 sudo apt-mark hold kubelet kubeadm kubectl
 

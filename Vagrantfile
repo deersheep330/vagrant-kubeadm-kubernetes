@@ -11,14 +11,14 @@ Vagrant.configure("2") do |config|
       master.vm.hostname = "master-node"
       master.vm.network "private_network", ip: "10.0.0.10"
       master.vm.provider "virtualbox" do |vb|
-          vb.memory = 4048
-          vb.cpus = 2
+          vb.memory = 2048
+          vb.cpus = 1
       end
       master.vm.provision "shell", path: "scripts/common.sh"
       master.vm.provision "shell", path: "scripts/master.sh"
     end
 
-    (1..2).each do |i|
+    (1..3).each do |i|
   
     config.vm.define "node0#{i}" do |node|
       node.vm.box = "bento/ubuntu-18.04"
