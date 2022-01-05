@@ -11,8 +11,8 @@ Vagrant.configure("2") do |config|
       master.vm.hostname = "master-node"
       master.vm.network "private_network", ip: "10.0.0.10"
       master.vm.provider "virtualbox" do |vb|
-          vb.memory = 2048
-          vb.cpus = 2
+          vb.memory = 4096
+          vb.cpus = 4
       end
       master.vm.provision "shell", path: "scripts/common.sh"
       master.vm.provision "shell", path: "scripts/master.sh"
@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
       node.vm.network "private_network", ip: "10.0.0.1#{i}"
       node.vm.provider "virtualbox" do |vb|
           vb.memory = 4096
-          vb.cpus = 2
+          vb.cpus = 4
       end
       node.vm.provision "shell", path: "scripts/common.sh"
       node.vm.provision "shell", path: "scripts/node.sh"
